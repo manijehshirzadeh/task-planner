@@ -1,0 +1,68 @@
+#g1Navbar {
+	background-color: #dae8fc;
+}
+
+/* BRAND ANIMATION */
+#g1Navbar a.navbar-brand {
+	background-image: linear-gradient(to right, #54b3d6, #54b3d6 50%, #000 50%);
+	background-size: 200% 100%;
+	background-position: -100%;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transition: all 0.4s ease-in-out;
+}
+
+#g1Navbar a.navbar-brand::before {
+	content: '';
+	background: #54b3d6;
+	display: block;
+	position: absolute;
+	bottom: -3px;
+	left: 0;
+	width: 0;
+	height: 3px;
+}
+
+#g1Navbar a.navbar-brand:hover {
+	background-position: 0;
+}
+
+#navbarSupportedContent {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+
+#g1Navbar .nav-item {
+	margin-right: 1rem;
+}
+
+#g1Navbar .nav-item .active {
+	background-color: #3d8bcd;
+	color: #fff;
+	font-weight: bold;
+	padding-inline: 1rem;
+}
+
+#g1Navbar .nav-item:hover {
+	transform: scale(1.2);
+	transition: transform 0.4s ease-in-out;
+}
+
+#g1Navbar .nav-item .active:hover {
+	background-color: #3d8bcd;
+	opacity: 0.9;
+}
+
+#shared-with,
+.form-floating label {
+	color: #a2aab7;
+}
+
+.divider:after,
+.divider:before {
+	content: '';
+	flex: 1;
+	height: 1px;
+	background: #eee;
+}
