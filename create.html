@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Task Planner- Create</title>
+  </head>
+
+  <body>
+    <form>
+      <div class="form-group">
+        <label for="exampleFormControlInput1"> Task Name </label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="Write a Task Name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1"> Assignee </label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="Add assignee"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1"> Description </label>
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="3"
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="start">Due Date</label>
+        <br />
+        <input
+          type="date"
+          id="start"
+          name="trip-start"
+          value="pick a date"
+          min="2022-01-01"
+          max="2023-01-01"
+        />
+      </div>
+
+      <div class="form-group row col-md-3">
+        Status
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Open this select menu</option>
+          <option value="1">To Do</option>
+          <option value="2">In progress</option>
+          <option value="3">Review</option>
+          <option value="3">Done</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg form-group">
+        Create
+      </button>
+      <a type="submit" class="btn btn-secondary btn-lg form-group" href="index.html">
+        Cancel
+      </button>
+    </form>
+  </body>
+</html>
