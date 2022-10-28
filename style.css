@@ -54,8 +54,7 @@
 	opacity: 0.9;
 }
 
-#shared-with,
-.form-floating label {
+#shared-with{
 	color: #a2aab7;
 }
 
@@ -65,4 +64,13 @@
 	flex: 1;
 	height: 1px;
 	background: #eee;
+}
+
+.form-textarea textarea.form-control {
+	min-height: 150px;
+}
+
+.main--container div.card {
+	height: 600px;
+
 }
