@@ -9,7 +9,7 @@ body {
   padding: 0;
   min-height: 100%;
   min-width: 100%;
-	background-color: #EFF0F6!important;
+  background-color: #EFF0F6!important;
   padding: 2rem;
 
 }
@@ -98,21 +98,21 @@ body {
   box-shadow: 0px 0px 70px #C7CBE3;
   height: 875px;
   padding-top: 50px;
-	padding-bottom: 0;
+  padding-bottom: 0;
   overflow-y: scroll;
   width: 625px;
-	margin: 0 auto;
+  margin: 0 auto;
 }
 
 form {
   font-size: 20px;
   padding-inline: 1.5em;
-	padding-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 .form-group label {
-	margin-bottom: .5rem;
-	font-weight: 600;
+  margin-bottom: .5rem;
+  font-weight: 600;
 }
 
 .form-group {
@@ -140,11 +140,11 @@ input {
 }
 
 .button--group {
-	margin-top: 100px;
-	align-items: center;
-	justify-content: space-between;
+  margin-top: 100px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .button--group button {
-	min-width: 240px;
+  min-width: 240px;
 }
