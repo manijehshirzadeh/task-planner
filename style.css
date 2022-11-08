@@ -80,6 +80,7 @@ body {
 form {
   font: bold;
   font-size: 20px;
+  padding: 3em;
 }
 
 .form-group {
@@ -102,6 +103,6 @@ form {
 input {
   border-color: blue;
   border-radius: 5px;
-  width: 340px;
+  width: 310px;
   font-weight: lighter;
 }
