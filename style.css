@@ -11,7 +11,10 @@ body {
   min-width: 100%;
   background-color: #EFF0F6!important;
   padding: 2rem;
+}
 
+div.main--container {
+  padding-inline: 0;
 }
 
 #g1Navbar {
@@ -99,8 +102,7 @@ body {
   height: 875px;
   padding-top: 50px;
   padding-bottom: 0;
-  overflow-y: scroll;
-  width: 625px;
+  max-width: 625px;
   margin: 0 auto;
 }
 
@@ -146,5 +148,5 @@ input {
 }
 
 .button--group button {
-  min-width: 240px;
+  max-width: 240px;
 }
