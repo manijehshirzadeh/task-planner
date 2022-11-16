@@ -38,28 +38,54 @@ const cardDataList = [
 	},
 ];
 
-const mainContent = document.querySelector('div.container.py-5.h-100');
+window.addEventListener('load', () => {
+	const mainContent = document.querySelector('main');
+	console.log(mainContent);
+	const cardContainer = document.createElement('div');
+	cardContainer.classList.add('container', 'py-5', 'h-100');
+	mainContent.appendChild(cardContainer);
 
-const card = mainContent.querySelector('div.card');
+	const row = document.createElement('div');
+	row.classList.add('row', 'd-flex', 'justify-content-center');
+	cardContainer.appendChild(row);
 
-const shareWithList = card.querySelector('ul.list-group');
+	const col = document.createElement('div');
+	col.classList.add('col', 'col-lg-8', 'col-xl-6');
+	const card = document.createElement('div');
+	card.classList.add('card', 'rounded-3', 'my-2');
+	row.appendChild(col);
+	col.appendChild(card);
+	const cardBody = document.createElement('div');
+	cardBody.classList.add('card-body', 'p-4');
 
-const { shareWith } = cardDataList[0];
+	const ul_el = document.createElement('ul');
+	ul_el.classList.add(
+		'list-group',
+		'rounded-0',
+		'list-group-horizontal',
+		'justify-content-center',
+		'pb-2'
+	);
 
-const renderShareWithList = () => {
-	for (let i = 0; i < shareWith.length; i++) {
-		shareWithList.innerHTML += `
+	const { taskName, badge, ...rest } = cardDataList[0];
+
+	const { shareWith } = cardDataList[0];
+
+	debugger;
+	const renderShareWithList = () => {
+		for (let i = 0; i < shareWith.length; i++) {
+			ul_el.innerHTML += `
 									<li class="list-group-item border-0 d-flex align-items-center p-0">
 										<img src=${shareWith[i].avatarLink} alt=${shareWith[i].name} class="rounded-circle me-n2" width="45">
 									</li>
    `;
-	}
-};
+		}
 
-const { taskName, badge, ...rest } = cardDataList[0];
+		return ul_el;
+	};
 
-card.innerHTML += `
-<div class="card-body p-4">
+	cardBody.innerHTML += `
+	<div class="card-body p-4">
 								<!-- TASK NAME -->
 								<p class="mb-2">
 									<span class="h2 me-2">${taskName}</span>
@@ -71,8 +97,8 @@ card.innerHTML += `
 										rest.assignee.name
 									}>
 										<img src=${rest.assignee.avatarLink} alt=${
-	rest.assignee.name
-} class="rounded-circle me-n2" width="45">
+		rest.assignee.name
+	} class="rounded-circle me-n2" width="45">
 									</span>
 								</p>
 								<p class="text-muted pb-2">${rest.assignedDate}</p>
@@ -106,11 +132,7 @@ card.innerHTML += `
 								</div>
                 ${renderShareWithList()}
 							</div>
+	`;
 
-`;
-
-{
-	/* <div class="card rounded-3 my-2">
-							
-						</div> */
-}
+	card.appendChild(cardBody);
+});
