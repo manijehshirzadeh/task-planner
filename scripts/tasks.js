@@ -71,7 +71,6 @@ window.addEventListener('load', () => {
 
 	const { shareWith } = cardDataList[0];
 
-	debugger;
 	const renderShareWithList = () => {
 		for (let i = 0; i < shareWith.length; i++) {
 			ul_el.innerHTML += `
@@ -81,7 +80,7 @@ window.addEventListener('load', () => {
    `;
 		}
 
-		return ul_el;
+		return ul_el.outerHTML;
 	};
 
 	cardBody.innerHTML += `
