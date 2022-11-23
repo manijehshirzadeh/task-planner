@@ -1,4 +1,4 @@
-/*
+const data = `
 
 <!-- <div class="container-fluid main--container">
 			<!-- CARD CONTAINER -->
@@ -463,4 +463,4 @@
 			</div>
 		</div> -->
 
-*/
+`
