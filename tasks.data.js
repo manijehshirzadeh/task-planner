@@ -1,3 +1,5 @@
+// barebone HTML template for the task list
+
 const data = `
 
 <!-- <div class="container-fluid main--container">

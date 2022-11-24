@@ -1,6 +1,6 @@
 // TASK 4
 
-function validateForm() {
+export function validateForm() {
 	// Validating Name field
 	let taskInputValue = document.querySelector('#task').value;
 	let taskError = document.querySelector('#task-error');

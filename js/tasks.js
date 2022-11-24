@@ -1,47 +1,53 @@
 // this is an array of objects
 const tasks = [
-    // this object is the first item of the array
-    {
-        id: 1,
-        name: "Do task 7",
-        description: "This is what we need to do from the description",
-        assignedTo: "Andrea Isla",
-        dueDate: "24/11/2022",
-        status: "todo",
-    },
-    // this object is the SECOND item of the array
-    {
-        id: 2,
-        name: "Talk to team",
-        description: "Talk to the team to ensure good collaboration",
-        assignedTo: "Nick Rhen",
-        dueDate: "25/11/2022",
-        status: "todo",
-    },
-    {
-        id: 3,
-        name: "Complete form validation",
-        description: "Do Form Validation",
-        assignedTo: "Manij Shirzadeh",
-        dueDate: "25/11/2022",
-        status: "todo",
-    },
-    {
-        id: 4,
-        name: "Review results",
-        description: "Review our outcomes",
-        assignedTo: "Tony Nguyen",
-        dueDate: "25/11/2022",
-        status: "todo",
-    },
+	// this object is the first item of the array
+	{
+		id: 1,
+		name: 'Do task 7',
+		description: 'This is what we need to do from the description',
+		assignedTo: 'Andrea Isla',
+		dueDate: '24/11/2022',
+		status: 'todo',
+	},
+	// this object is the SECOND item of the array
+	{
+		id: 2,
+		name: 'Talk to team',
+		description: 'Talk to the team to ensure good collaboration',
+		assignedTo: 'Nick Rhen',
+		dueDate: '25/11/2022',
+		status: 'todo',
+	},
+	{
+		id: 3,
+		name: 'Complete form validation',
+		description: 'Do Form Validation',
+		assignedTo: 'Manij Shirzadeh',
+		dueDate: '25/11/2022',
+		status: 'todo',
+	},
+	{
+		id: 4,
+		name: 'Review results',
+		description: 'Review our outcomes',
+		assignedTo: 'Tony Nguyen',
+		dueDate: '25/11/2022',
+		status: 'todo',
+	},
 ];
 
-function render() {
-    const container = document.getElementById('tasks_container');
+function deleteTask(id) {
+	console.log('I have to delete task ', id);
+	// here goes the future implementation
+	// ...
+}
 
-    for (let task of tasks) {
-        console.log('one iteration, rendering task: ', task.name);
-        const htmlForTask = `
+function render() {
+	const container = document.getElementById('tasks_container');
+
+	for (let task of tasks) {
+		console.log('one iteration, rendering task: ', task.name);
+		const htmlForTask = `
                     <div class="col col-lg-8 col-xl-6">
 						<div class="card rounded-3 my-2">
 							<div class="card-body p-4">
@@ -81,10 +87,22 @@ function render() {
 						<!-- CARD END -->
 					</div>
         `;
-        container.innerHTML += htmlForTask;
-    }
+		container.innerHTML += htmlForTask;
+	}
 
+	// deleteTaskButtons is an array of all the "delete" button elements;
+	const deleteTaskButtons = container.querySelectorAll('.delete-task');
+	// loop to go through each of the button elements
+	for (deleteButtonElement of deleteTaskButtons) {
+		// add an event listener
+		deleteButtonElement.onclick = function (event) {
+			// clickedButton is the button that was just clicked
+			const clickedButton = event.target;
+			// dataset is used to get what I put in <a data-delete-task-id="some Id"/>
+			const deleteTaskId = clickedButton.dataset['deleteTaskId'];
+			deleteTask(deleteTaskId);
+		};
+	}
 }
 
 render();
-
