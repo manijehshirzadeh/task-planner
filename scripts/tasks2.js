@@ -37,11 +37,16 @@ const tasks = [
     },
 ];
 
+function deleteTask(id) {
+    console.log('I have to delete task ', id);
+    // here goes the future implementation
+    // ...
+}
+
 function render() {
     const container = document.getElementById('tasks_container');
 
     for (let task of tasks) {
-        console.log('one iteration, rendering task: ', task.name);
         const htmlForTask = `
                     <div class="col col-lg-8 col-xl-6">
 						<div class="card rounded-3 my-2">
@@ -77,12 +82,28 @@ function render() {
 									<textarea class="form-control" placeholder="Task summary" id="floatingTextarea">${task.description}
                 </textarea>
 								</div>
+                                <div class="mt-2">
+                                    <a href="#" class="btn btn-danger delete-task" data-delete-task-id="${task.id}">Delete task</a>
+                                </div>
 							</div>
 						</div>
 						<!-- CARD END -->
 					</div>
         `;
         container.innerHTML += htmlForTask;
+    }
+    // deleteTaskButtons is an array of all the "delete" button elements;
+    const deleteTaskButtons = container.querySelectorAll('.delete-task');
+    // loop to go through each of the button elements
+    for (deleteButtonElement of deleteTaskButtons)  {
+        // add an event listener 
+        deleteButtonElement.onclick = function(event) {
+            // clickedButton is the button that was just clicked
+            const clickedButton = event.target;
+            // dataset is used to get what I put in <a data-delete-task-id="some Id"/>
+            const deleteTaskId = clickedButton.dataset['deleteTaskId'];
+            deleteTask(deleteTaskId);
+        };
     }
 
 }
