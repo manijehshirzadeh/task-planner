@@ -151,6 +151,10 @@ input {
 	max-width: 240px;
 }
 
+small[id*="-error"] {
+	color: red!important;
+}
+
 @media screen and (min-width: 375px) {
 	.button--group button {
 		padding-inline: 0.5rem;

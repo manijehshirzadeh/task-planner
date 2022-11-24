@@ -1,4 +1,3 @@
-
 // this is an array of objects
 const tasks = [
     // this object is the first item of the array
@@ -37,7 +36,7 @@ const tasks = [
     },
 ];
 
-function render() {
+export function render(tasks = []) {
     const container = document.getElementById('tasks_container');
 
     for (let task of tasks) {
@@ -89,9 +88,3 @@ function render() {
 
 render();
 
-// console.log('tasks', tasks);
-// console.log('first task', tasks[0]);
-// console.log(
-//     'first task, property "dueDate"',
-//     tasks[1].dueDate
-// );

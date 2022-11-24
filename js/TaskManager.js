@@ -1,3 +1,6 @@
+import { render } from "./tasks2";
+
+// TASK 7
 /**
  * @typedef {Object} Task
  * @property {number} id
@@ -7,16 +10,6 @@
  * @property {Date} dueDate
  * @property {string} status
  */
-
-// TODO: check dueDate type from form input
-const task = {
-	id: 1,
-	name: 'Do task 7',
-	description: 'This is what we need to do from the description',
-	assignedTo: 'Andrea Isla',
-	dueDate: '24/11/2022',
-	status: 'TODO',
-};
 
 const STORAGE_KEY_PREFIX = 'TASK_LIST_WITH_LOCAL_STORAGE';
 const STORAGE_KEY = `${STORAGE_KEY_PREFIX}-GROUP1`;
@@ -36,6 +29,10 @@ class TaskManager {
 		this.updateLocalStorage();
 	}
 
+	get tasks() {
+		return this.tasks;
+	}
+
 	removeTask(index) {
 		this.tasks.splice(index, 1);
 		this.updateLocalStorage();
@@ -48,12 +45,11 @@ class TaskManager {
 
 // Test input function
 const form = document.forms[0];
-const taskName = document.getElementById('task-name');
-const taskAssignee = document.getElementById('task-assignee');
-const taskDescription = document.getElementById('task-description');
-const datePicker = document.getElementById('datepicker');
-const taskDueDate = datePicker.getElementsByTagName('input')[0];
-const taskStatus = document.getElementById('task-status');
+const taskName = document.getElementById('task');
+const taskAssignee = document.getElementById('assignee');
+const taskDescription = document.getElementById('description');
+const taskDueDate = document.getElementById('due-date');
+const taskStatus = document.getElementById('status');
 
 const taskManager = new TaskManager(STORAGE_KEY);
 
@@ -70,4 +66,8 @@ form.onsubmit = (e) => {
 	console.log(task);
 
 	taskManager.addTask(task);
+
+	render(taskManager.tasks);
 };
+
+export default taskManager;
