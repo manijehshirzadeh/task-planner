@@ -1,13 +1,14 @@
 /**
  * @typedef {Object} Task
- * @property {string} id
+ * @property {number} id
  * @property {string} name
  * @property {string} description
  * @property {string} assignedTo
- * @property {string} dueDate
+ * @property {Date} dueDate
  * @property {string} status
  */
 
+// TODO: check dueDate type from form input
 const task = {
 	id: 1,
 	name: 'Do task 7',
@@ -59,7 +60,7 @@ const taskManager = new TaskManager(STORAGE_KEY);
 form.onsubmit = (e) => {
 	e.preventDefault();
 	const task = {
-		id: Date.now().toString(),
+		id: Date.now(),
 		name: taskName.value,
 		description: taskDescription.value,
 		assignedTo: taskAssignee.value,
