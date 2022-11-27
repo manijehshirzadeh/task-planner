@@ -2,6 +2,8 @@
 
 export function validateForm() {
 	// Validating Name field
+	let errorMessages = [];
+	let isValidated = true;
 	let taskInputValue = document.querySelector('#task').value;
 	let taskError = document.querySelector('#task-error');
 	let taskErrorText = '';
@@ -10,8 +12,9 @@ export function validateForm() {
 		taskErrorText = 'Name is required';
 		taskError.innerHTML = taskErrorText;
 	}
-	if (taskInputValue.length > 8) {
-		taskErrorText = 'Name should not be longer than 8 characters';
+
+	if (taskInputValue.length < 8) {
+		taskErrorText = 'Name should be longer than 8 characters';
 		taskError.innerHTML = taskErrorText;
 	}
 
@@ -24,8 +27,8 @@ export function validateForm() {
 		assigneeErrorText = 'Assignee is required';
 		assigneeError.innerHTML = assigneeErrorText;
 	}
-	if (assigneeInputValue.length > 8) {
-		assigneeErrorText = 'Assignee should not be longer than 8 characters';
+	if (assigneeInputValue.length < 8) {
+		assigneeErrorText = 'Assignee should be longer than 8 characters';
 		assigneeError.innerHTML = assigneeErrorText;
 	}
 
@@ -38,9 +41,8 @@ export function validateForm() {
 		descriptionErrorText = 'Description is required';
 		descriptionError.innerHTML = descriptionErrorText;
 	}
-	if (descriptionInputValue.length > 15) {
-		descriptionErrorText =
-			'Description should not be longer than 15 characters';
+	if (descriptionInputValue.length < 15) {
+		descriptionErrorText = 'Description should be longer than 15 characters';
 		descriptionError.innerHTML = descriptionErrorText;
 	}
 
@@ -69,4 +71,17 @@ export function validateForm() {
 		dueDateErrorText = 'Due Date cannot be in the past ';
 		dueDateError.innerHTML = dueDateErrorText;
 	}
+	if (taskErrorText !== '') errorMessages.push(taskErrorText);
+	if (assigneeErrorText !== '') errorMessages.push(assigneeErrorText);
+	if (descriptionErrorText !== '') errorMessages.push(descriptionErrorText);
+	if (dueDateErrorText !== '') errorMessages.push(dueDateErrorText);
+
+	if (errorMessages.length > 0) {
+		isValidated = false;
+		console.log('before validate', errorMessages);
+	} else {
+		isValidated = true;
+		console.log('after validate', errorMessages);
+	}
+	return isValidated;
 }
