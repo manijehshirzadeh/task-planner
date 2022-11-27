@@ -1,5 +1,5 @@
+// TASK 6
 import { htmlForTask } from './utils.js';
-// TASK 7
 /**
  * @typedef {Object} Task
  * @property {number} id

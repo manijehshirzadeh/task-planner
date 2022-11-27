@@ -1,3 +1,4 @@
+// TASK 6
 import { TaskManager } from './TaskManager.js';
 import { validateForm } from './create.js';
 
@@ -16,6 +17,16 @@ const successMessage = document.createElement('span');
 successMessage.innerText = 'Task added success!';
 successMessage.className = 'text-success';
 successMessage.style.marginLeft = '18px';
+
+function clearSuccessMessage() {
+	successMessage.remove();
+}
+
+setInterval(() => {
+	clearSuccessMessage();
+}, 4000);
+
+clearInterval(clearSuccessMessage());
 
 const taskManager = new TaskManager(STORAGE_KEY);
 

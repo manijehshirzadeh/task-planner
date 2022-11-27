@@ -1,3 +1,4 @@
+// TASK 7
 import { TaskManager } from './TaskManager.js';
 
 const STORAGE_KEY_PREFIX = 'TASK_LIST_WITH_LOCAL_STORAGE';
@@ -16,11 +17,13 @@ if (tasks.length === 0) {
 		'No task to show. Please add a task at <a href="/create.html">Create page.</a>';
 	container.appendChild(warningHeading);
 }
+
+// EXTRA TASK 7
 const deleteButtons = container.querySelectorAll('#delete');
 deleteButtons.forEach((button) => {
 	button.addEventListener('click', (e) => {
 		const id = e.target.dataset.id;
-		const index = tasks.findIndex((task) => task.id == id);
+		const index = tasks.findIndex((task) => task.id === id);
 		allTasks.removeTask(index);
 		window.location.reload();
 	});

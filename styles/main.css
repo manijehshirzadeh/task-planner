@@ -93,6 +93,16 @@ div.main--container {
 	height: 600px;
 }
 
+.card.rounded-3.my-2:hover {
+	transform: translateY(-16px);
+	transition: transform 0.3s ease-in-out;
+}
+
+.card.rounded-3.my-2 {
+	transform: translateY(0);
+	transition: transform 0.3s ease-in-out;
+}
+
 /* CREATE PAGE */
 .form--wrapper.panel {
 	background: #dae8fc;
