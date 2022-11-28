@@ -14,7 +14,7 @@ if (tasks.length === 0) {
 	const warningHeading = document.createElement('h3');
 	warningHeading.className = 'text-center';
 	warningHeading.innerHTML =
-		'No task to show. Please add a task at <a href="/create.html">Create page.</a>';
+		'No task to show. Please add a task at <a href="create.html">Create page.</a>';
 	container.appendChild(warningHeading);
 }
 
