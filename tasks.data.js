@@ -1,3 +1,4 @@
+// barebone to render tasks page
 const data = `
 
 <!-- <div class="container-fluid main--container">
@@ -127,7 +128,7 @@ const data = `
 								<div class="form-textarea">
 									<textarea class="form-control" placeholder="Task summary" id="floatingTextarea">
 &#9679; &nbsp;Implement the basic HTML structure of your Wireframes design.
-&#9679; &nbsp;Identify if you need extra support from instructors. 
+&#9679; &nbsp;Identify if you need extra support from instructors.
 &#9679; &nbsp;Create a basic template.
                 </textarea>
 								</div>
@@ -195,7 +196,7 @@ const data = `
 								<div class="form-textarea">
 									<textarea class="form-control" placeholder="Task summary" id="floatingTextarea">
 &#9679; &nbsp;Create a basic card layout to represent a task
-&#9679; &nbsp;Create a custom content list group 
+&#9679; &nbsp;Create a custom content list group
 &#9679; &nbsp;Add at least 5 sample cards with hardcoded data
                 </textarea>
 								</div>
@@ -463,4 +464,4 @@ const data = `
 			</div>
 		</div> -->
 
-`
+`;

@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 body {
-	background: url('img/bg__left.svg') left 10% no-repeat,
-		url('img/bg__top-right.svg') right top no-repeat,
-		url('img/bg__btm-right.svg') right bottom no-repeat;
+	background: url('../img/bg__left.svg') left 10% no-repeat,
+		url('../img/bg__top-right.svg') right top no-repeat,
+		url('../img/bg__btm-right.svg') right bottom no-repeat;
 	font-family: 'Poppins', sans-serif;
 	margin: 0;
 	padding: 0;
@@ -93,6 +93,16 @@ div.main--container {
 	height: 600px;
 }
 
+.card.rounded-3.my-2:hover {
+	transform: translateY(-16px);
+	transition: transform 0.3s ease-in-out;
+}
+
+.card.rounded-3.my-2 {
+	transform: translateY(0);
+	transition: transform 0.3s ease-in-out;
+}
+
 /* CREATE PAGE */
 .form--wrapper.panel {
 	background: #dae8fc;
@@ -151,10 +161,14 @@ input {
 	max-width: 240px;
 }
 
+small[id*="-error"] {
+	color: red!important;
+}
+
 @media screen and (min-width: 375px) {
 	.button--group button {
-    padding-inline: 0.5rem;
-		width: 200px;
+		padding-inline: 0.5rem;
+		width: 230px;
 	}
 
 	.form--wrapper.panel {
