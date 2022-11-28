@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
+:root {
+	--main-color: #54b3d6;
+	--secondary-color: #3d8bcd;
+}
+
 body {
 	background: url('../img/bg__left.svg') left 10% no-repeat,
 		url('../img/bg__top-right.svg') right top no-repeat,
@@ -7,10 +12,10 @@ body {
 	font-family: 'Poppins', sans-serif;
 	margin: 0;
 	padding: 0;
-	/* height: 100vh; */
+	height: 100vh;
 	min-width: 100%;
 	background-color: #eff0f6 !important;
-	padding: 2rem;
+	padding: 1rem;
 }
 
 div.main--container {
@@ -85,21 +90,42 @@ div.main--container {
 	background: #eee;
 }
 
+#carousel_tasks {
+	width: 900px;
+	display: block;
+	margin-inline: auto;
+	padding: 0;
+}
+
+.card-body {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	max-height: fit-content;
+}
+
+#carousel_tasks .carousel-control-next,
+#carousel_tasks .carousel-control-prev {
+	color: var(--secondary-color);
+}
+
 .form-textarea textarea.form-control {
 	min-height: 150px;
 }
 
 .main--container div.card {
-	height: 600px;
+	height: 500px;
 }
 
-.card.rounded-3.my-2:hover {
-	transform: translateY(-16px);
-	transition: transform 0.3s ease-in-out;
-}
-
-.card.rounded-3.my-2 {
+.card--content {
 	transform: translateY(0);
+	transition: transform 0.3s ease-in-out;
+	margin-top: 0.75rem;
+	margin-bottom: 0.75rem;
+}
+
+.card--content:hover {
+	transform: translateY(-10px);
 	transition: transform 0.3s ease-in-out;
 }
 
@@ -161,8 +187,8 @@ input {
 	max-width: 240px;
 }
 
-small[id*="-error"] {
-	color: red!important;
+small[id*='-error'] {
+	color: red !important;
 }
 
 @media screen and (min-width: 375px) {

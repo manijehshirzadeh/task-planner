@@ -14,7 +14,7 @@ const badgeClassName = (task) => {
 
 export const htmlForTask = (task) => `
 <div class="col col-lg-8 col-xl-6">
-  <div class="card rounded-3 my-2">
+  <div class="card card--content rounded-3">
     <div class="card-body p-4">
       <!-- TASK NAME -->
       <p class="mb-2">
