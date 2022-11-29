@@ -28,3 +28,15 @@ deleteButtons.forEach((button) => {
 		window.location.reload();
 	});
 });
+
+// MARK AS DONE
+const madButtons = container.querySelectorAll('.mark-as-done');
+madButtons.forEach((button) => {
+	button.addEventListener('click', (e) => {
+		const id = e.target.dataset.id;
+		console.log(id)
+		const taskIndex = tasks.findIndex((task) => task.id == id);
+		allTasks.changeTaskStatus(taskIndex, 'DONE');
+		window.location.reload();
+	});
+});

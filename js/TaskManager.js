@@ -32,6 +32,11 @@ export class TaskManager {
 		this._tasks.splice(index, 1);
 		this.updateLocalStorage();
 	}
+	
+	changeTaskStatus(index, newStatus) {
+		this._tasks[index].status = newStatus;
+		this.updateLocalStorage();
+	}
 
 	renderTasks(tasks) {
 		const container = document.getElementById('tasks_container');

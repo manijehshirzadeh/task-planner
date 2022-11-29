@@ -53,6 +53,10 @@ export const htmlForTask = (task) => `
       <div class="d-flex justify-content-end button--container">
         <button data-id=${
 					task.id
+				} type="button" class="mark-as-done btn btn-success rounded-3 mt-3 me-2">Mark as done</button>
+        </button>
+        <button data-id=${
+					task.id
 				} id="delete" type="button" class="btn btn-danger rounded-3 mt-3 me-2">Delete
           Task</button>
         </button>
