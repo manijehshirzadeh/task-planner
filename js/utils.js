@@ -12,6 +12,18 @@ const badgeClassName = (task) => {
 	}
 };
 
+const renderButtons = (task) => {
+  let htmlForButtons = "";
+  if (task.status !== "DONE") {
+    htmlForButtons += `<button data-id=${task.id} id="deleteMadButton" type="button" class="mark-as-done btn btn-success rounded-3 mt-3 me-2" >Mark as done</button>
+  </button>  `;
+  }
+  htmlForButtons += `<button data-id=${task.id} id="delete" type="button" class="btn btn-danger rounded-3 mt-3 me-2">Delete
+    Task</button>
+  </button>`;
+  return htmlForButtons;
+};
+
 export const htmlForTask = (task) => `
 <div class="col col-lg-8 col-xl-6">
   <div class="card card--content rounded-3">
@@ -51,15 +63,8 @@ export const htmlForTask = (task) => `
 
       <!-- BUTTONS -->
       <div class="d-flex justify-content-end button--container">
-        <button data-id=${
-					task.id
-				} type="button" class="mark-as-done btn btn-success rounded-3 mt-3 me-2">Mark as done</button>
-        </button>
-        <button data-id=${
-					task.id
-				} id="delete" type="button" class="btn btn-danger rounded-3 mt-3 me-2">Delete
-          Task</button>
-        </button>
+        ${renderButtons(task)}
+        
       </div>
     </div>
     <!-- CARD END -->
