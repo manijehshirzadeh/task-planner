@@ -12,6 +12,7 @@ const taskAssignee = document.getElementById('assignee');
 const taskDescription = document.getElementById('description');
 const taskDueDate = document.getElementById('due-date');
 const taskStatus = document.getElementById('status');
+const errorText = document.querySelectorAll('small.form-text.text-muted');
 
 const successMessage = document.createElement('span');
 successMessage.innerText = 'Task added success!';
@@ -24,6 +25,9 @@ function clearSuccessMessage() {
 
 setInterval(() => {
 	clearSuccessMessage();
+	errorText.forEach((error) => {
+		error.innerHTML = '';
+	});
 }, 4000);
 
 clearInterval(clearSuccessMessage());

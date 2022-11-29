@@ -71,10 +71,23 @@ export function validateForm() {
 		dueDateErrorText = 'Due Date cannot be in the past ';
 		dueDateError.innerHTML = dueDateErrorText;
 	}
+
+	let statusValue = document.querySelector('#status').value;
+	console.log(statusValue);
+	let statusError = document.querySelector('#status-error');
+	let statusErrorText = '';
+	// Default status value
+	const defaultStatus = 'Open this select menu';
+	if (statusValue === defaultStatus) {
+		statusErrorText = 'Status is required';
+		statusError.innerHTML = statusErrorText;
+	}
+
 	if (taskErrorText !== '') errorMessages.push(taskErrorText);
 	if (assigneeErrorText !== '') errorMessages.push(assigneeErrorText);
 	if (descriptionErrorText !== '') errorMessages.push(descriptionErrorText);
 	if (dueDateErrorText !== '') errorMessages.push(dueDateErrorText);
+	if (statusErrorText !== '') errorMessages.push(statusErrorText);
 
 	if (errorMessages.length > 0) {
 		isValidated = false;
