@@ -73,7 +73,6 @@ export function validateForm() {
 	}
 
 	let statusValue = document.querySelector('#status').value;
-	console.log(statusValue);
 	let statusError = document.querySelector('#status-error');
 	let statusErrorText = '';
 	// Default status value
@@ -91,10 +90,8 @@ export function validateForm() {
 
 	if (errorMessages.length > 0) {
 		isValidated = false;
-		console.log('before validate', errorMessages);
 	} else {
 		isValidated = true;
-		console.log('after validate', errorMessages);
 	}
 	return isValidated;
 }
