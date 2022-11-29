@@ -3,6 +3,7 @@
 :root {
 	--main-color: #54b3d6;
 	--secondary-color: #3d8bcd;
+	--error-color: red;
 }
 
 body {
@@ -91,10 +92,8 @@ div.main--container {
 }
 
 #carousel_tasks {
-	width: 900px;
 	display: block;
 	margin-inline: auto;
-	padding: 0;
 }
 
 .card-body {
@@ -115,6 +114,12 @@ div.main--container {
 
 .main--container div.card {
 	height: 500px;
+}
+
+.main--container img[alt='team work'],
+#carousel_tasks img {
+	width: 800px;
+	max-height: 600px;
 }
 
 .card--content {
@@ -157,10 +162,7 @@ form {
 	margin: 1em;
 }
 
-.dropdown {
-	margin: 2em;
-}
-
+.dropdown,
 .col-auto {
 	margin: 2em;
 }
@@ -188,7 +190,7 @@ input {
 }
 
 small[id*='-error'] {
-	color: red !important;
+	color: var(--error-color) !important;
 }
 
 @media screen and (min-width: 375px) {
@@ -199,5 +201,12 @@ small[id*='-error'] {
 
 	.form--wrapper.panel {
 		height: fit-content;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.main--container img[alt='team work'],
+	#carousel_tasks img {
+		height: auto;
 	}
 }

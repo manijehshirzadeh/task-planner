@@ -28,7 +28,7 @@ setInterval(() => {
 	errorText.forEach((error) => {
 		error.innerHTML = '';
 	});
-}, 4000);
+}, 5000);
 
 clearInterval(clearSuccessMessage());
 
