@@ -7,3 +7,4 @@ The page will have the following pages and functinalities:
 - Create a form with the inputs needed.
 - Create a Task Card layout and a Task List component.
 - Use Bootstrap.
+- And a lot more ...
